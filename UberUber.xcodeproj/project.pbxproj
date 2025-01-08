@@ -7,18 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EBA354BA2D09E5BB000DA5FC /* UberUberApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA354B92D09E5BB000DA5FC /* UberUberApp.swift */; };
-		EBA354BC2D09E5BB000DA5FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA354BB2D09E5BB000DA5FC /* ContentView.swift */; };
 		EBA354BE2D09E5BC000DA5FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA354BD2D09E5BC000DA5FC /* Assets.xcassets */; };
-		EBA354C12D09E5BC000DA5FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA354C02D09E5BC000DA5FC /* Preview Assets.xcassets */; };
+		EBB3D4D52D2D1CCD005B1495 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB3D4D32D2D1CCD005B1495 /* Preview Assets.xcassets */; };
+		EBB3D4D92D2D55D9005B1495 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3D4D82D2D55D9005B1495 /* CartViewModel.swift */; };
+		EBCEDB4A2D2D1AD6003422ED /* DeliveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCEDB352D2D1AD6003422ED /* DeliveryViewModel.swift */; };
+		EBCEDB4B2D2D1AD6003422ED /* DriverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCEDB362D2D1AD6003422ED /* DriverViewModel.swift */; };
+		EBCEDB4C2D2D1AD6003422ED /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCEDB372D2D1AD6003422ED /* UserViewModel.swift */; };
+		EBCEDB4D2D2D1AD6003422ED /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCEDB392D2D1AD6003422ED /* APIService.swift */; };
+		EBCEDB4E2D2D1AD6003422ED /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCEDB3B2D2D1AD6003422ED /* Delivery.swift */; };
+		EBCEDB4F2D2D1AD6003422ED /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCEDB3C2D2D1AD6003422ED /* Driver.swift */; };
+		EBCEDB502D2D1AD6003422ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCEDB3D2D2D1AD6003422ED /* User.swift */; };
+		EBCEDB522D2D1AD6003422ED /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCEDB402D2D1AD6003422ED /* AccountView.swift */; };
+		EBCEDB532D2D1AD6003422ED /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCEDB412D2D1AD6003422ED /* CartView.swift */; };
+		EBCEDB542D2D1AD6003422ED /* DeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCEDB422D2D1AD6003422ED /* DeliveryView.swift */; };
+		EBCEDB552D2D1AD6003422ED /* DriversView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCEDB432D2D1AD6003422ED /* DriversView.swift */; };
+		EBCEDB562D2D1AD6003422ED /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCEDB442D2D1AD6003422ED /* HomeTabView.swift */; };
+		EBCEDB572D2D1AD6003422ED /* SingleDriverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCEDB452D2D1AD6003422ED /* SingleDriverView.swift */; };
+		EBCEDB592D2D1AD6003422ED /* UberUberApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCEDB492D2D1AD6003422ED /* UberUberApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EBA354B62D09E5BB000DA5FC /* UberUber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberUber.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EBA354B92D09E5BB000DA5FC /* UberUberApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberUberApp.swift; sourceTree = "<group>"; };
-		EBA354BB2D09E5BB000DA5FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EBA354BD2D09E5BC000DA5FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EBA354C02D09E5BC000DA5FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EBB3D4D32D2D1CCD005B1495 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EBB3D4D82D2D55D9005B1495 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		EBCEDB352D2D1AD6003422ED /* DeliveryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryViewModel.swift; sourceTree = "<group>"; };
+		EBCEDB362D2D1AD6003422ED /* DriverViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverViewModel.swift; sourceTree = "<group>"; };
+		EBCEDB372D2D1AD6003422ED /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		EBCEDB392D2D1AD6003422ED /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		EBCEDB3B2D2D1AD6003422ED /* Delivery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
+		EBCEDB3C2D2D1AD6003422ED /* Driver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		EBCEDB3D2D2D1AD6003422ED /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EBCEDB402D2D1AD6003422ED /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		EBCEDB412D2D1AD6003422ED /* CartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		EBCEDB422D2D1AD6003422ED /* DeliveryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryView.swift; sourceTree = "<group>"; };
+		EBCEDB432D2D1AD6003422ED /* DriversView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriversView.swift; sourceTree = "<group>"; };
+		EBCEDB442D2D1AD6003422ED /* HomeTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
+		EBCEDB452D2D1AD6003422ED /* SingleDriverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleDriverView.swift; sourceTree = "<group>"; };
+		EBCEDB492D2D1AD6003422ED /* UberUberApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UberUberApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,20 +77,65 @@
 		EBA354B82D09E5BB000DA5FC /* UberUber */ = {
 			isa = PBXGroup;
 			children = (
-				EBA354B92D09E5BB000DA5FC /* UberUberApp.swift */,
-				EBA354BB2D09E5BB000DA5FC /* ContentView.swift */,
+				EBCEDB3E2D2D1AD6003422ED /* Models */,
+				EBCEDB3A2D2D1AD6003422ED /* Services */,
+				EBCEDB382D2D1AD6003422ED /* ViewModels */,
+				EBCEDB462D2D1AD6003422ED /* Views */,
+				EBCEDB492D2D1AD6003422ED /* UberUberApp.swift */,
 				EBA354BD2D09E5BC000DA5FC /* Assets.xcassets */,
-				EBA354BF2D09E5BC000DA5FC /* Preview Content */,
+				EBB3D4D42D2D1CCD005B1495 /* Preview Content */,
 			);
 			path = UberUber;
 			sourceTree = "<group>";
 		};
-		EBA354BF2D09E5BC000DA5FC /* Preview Content */ = {
+		EBB3D4D42D2D1CCD005B1495 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				EBA354C02D09E5BC000DA5FC /* Preview Assets.xcassets */,
+				EBB3D4D32D2D1CCD005B1495 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EBCEDB382D2D1AD6003422ED /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EBCEDB352D2D1AD6003422ED /* DeliveryViewModel.swift */,
+				EBB3D4D82D2D55D9005B1495 /* CartViewModel.swift */,
+				EBCEDB362D2D1AD6003422ED /* DriverViewModel.swift */,
+				EBCEDB372D2D1AD6003422ED /* UserViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EBCEDB3A2D2D1AD6003422ED /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EBCEDB392D2D1AD6003422ED /* APIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EBCEDB3E2D2D1AD6003422ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EBCEDB3B2D2D1AD6003422ED /* Delivery.swift */,
+				EBCEDB3C2D2D1AD6003422ED /* Driver.swift */,
+				EBCEDB3D2D2D1AD6003422ED /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EBCEDB462D2D1AD6003422ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EBCEDB402D2D1AD6003422ED /* AccountView.swift */,
+				EBCEDB412D2D1AD6003422ED /* CartView.swift */,
+				EBCEDB422D2D1AD6003422ED /* DeliveryView.swift */,
+				EBCEDB432D2D1AD6003422ED /* DriversView.swift */,
+				EBCEDB442D2D1AD6003422ED /* HomeTabView.swift */,
+				EBCEDB452D2D1AD6003422ED /* SingleDriverView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +170,7 @@
 				TargetAttributes = {
 					EBA354B52D09E5BB000DA5FC = {
 						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
 					};
 				};
 			};
@@ -125,7 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBA354C12D09E5BC000DA5FC /* Preview Assets.xcassets in Resources */,
+				EBB3D4D52D2D1CCD005B1495 /* Preview Assets.xcassets in Resources */,
 				EBA354BE2D09E5BC000DA5FC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +209,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBA354BC2D09E5BB000DA5FC /* ContentView.swift in Sources */,
-				EBA354BA2D09E5BB000DA5FC /* UberUberApp.swift in Sources */,
+				EBCEDB572D2D1AD6003422ED /* SingleDriverView.swift in Sources */,
+				EBCEDB592D2D1AD6003422ED /* UberUberApp.swift in Sources */,
+				EBCEDB532D2D1AD6003422ED /* CartView.swift in Sources */,
+				EBCEDB4B2D2D1AD6003422ED /* DriverViewModel.swift in Sources */,
+				EBCEDB4C2D2D1AD6003422ED /* UserViewModel.swift in Sources */,
+				EBCEDB562D2D1AD6003422ED /* HomeTabView.swift in Sources */,
+				EBB3D4D92D2D55D9005B1495 /* CartViewModel.swift in Sources */,
+				EBCEDB4D2D2D1AD6003422ED /* APIService.swift in Sources */,
+				EBCEDB4F2D2D1AD6003422ED /* Driver.swift in Sources */,
+				EBCEDB552D2D1AD6003422ED /* DriversView.swift in Sources */,
+				EBCEDB522D2D1AD6003422ED /* AccountView.swift in Sources */,
+				EBCEDB4A2D2D1AD6003422ED /* DeliveryViewModel.swift in Sources */,
+				EBCEDB4E2D2D1AD6003422ED /* Delivery.swift in Sources */,
+				EBCEDB542D2D1AD6003422ED /* DeliveryView.swift in Sources */,
+				EBCEDB502D2D1AD6003422ED /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +354,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UberUber/Preview Content\"";
@@ -287,6 +373,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = DaNoah.UberUber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "UberUber/UberUber-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -297,6 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UberUber/Preview Content\"";
@@ -315,6 +404,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = DaNoah.UberUber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "UberUber/UberUber-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
