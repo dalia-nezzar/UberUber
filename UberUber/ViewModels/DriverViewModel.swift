@@ -25,6 +25,7 @@ class DriverViewModel: ObservableObject {
         self.service = service
     }
     
+    @MainActor
     func getDriver(driver_id: String) async {
         self.state = .loading
         do {
@@ -36,7 +37,7 @@ class DriverViewModel: ObservableObject {
         }
     }
     
-    
+    @MainActor
     func getDrivers() async {
         self.state = .loading
         do {

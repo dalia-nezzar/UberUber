@@ -9,9 +9,9 @@ import Foundation
 
 struct Delivery: Decodable, Hashable {
     var id_delivery: String
-    var delivery_date: Date
+    var delivery_date: String
     var total_price: Decimal
     var state: String
     var id_client: String
-    var created_at: Date
+    var created_at: String
 }

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB22BBE42D314A27003BEFDF /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22BBE32D314A27003BEFDF /* WelcomeView.swift */; };
+		EB310CA62D2ECDEE00576E86 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB310CA52D2ECDEE00576E86 /* LoginView.swift */; };
+		EB310CA82D2ECF7E00576E86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB310CA72D2ECF7E00576E86 /* ContentView.swift */; };
+		EB310CAD2D2ED6C200576E86 /* WaveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB310CAC2D2ED6C200576E86 /* WaveShape.swift */; };
+		EB310CB12D2ED74700576E86 /* ModernTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB310CB02D2ED74700576E86 /* ModernTextField.swift */; };
+		EB310CB42D2ED81500576E86 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB310CB32D2ED81500576E86 /* Color.swift */; };
+		EB310CB62D2EDBD600576E86 /* AnimatedWaves.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB310CB52D2EDBD600576E86 /* AnimatedWaves.swift */; };
 		EBA354BE2D09E5BC000DA5FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA354BD2D09E5BC000DA5FC /* Assets.xcassets */; };
 		EBB3D4D52D2D1CCD005B1495 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB3D4D32D2D1CCD005B1495 /* Preview Assets.xcassets */; };
 		EBB3D4D92D2D55D9005B1495 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3D4D82D2D55D9005B1495 /* CartViewModel.swift */; };
@@ -27,6 +34,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB22BBE32D314A27003BEFDF /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		EB310CA52D2ECDEE00576E86 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EB310CA72D2ECF7E00576E86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EB310CAC2D2ED6C200576E86 /* WaveShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShape.swift; sourceTree = "<group>"; };
+		EB310CB02D2ED74700576E86 /* ModernTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernTextField.swift; sourceTree = "<group>"; };
+		EB310CB32D2ED81500576E86 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		EB310CB52D2EDBD600576E86 /* AnimatedWaves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedWaves.swift; sourceTree = "<group>"; };
 		EBA354B62D09E5BB000DA5FC /* UberUber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberUber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA354BD2D09E5BC000DA5FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBB3D4D32D2D1CCD005B1495 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -58,6 +72,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB310CAB2D2ED6A400576E86 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EB310CAC2D2ED6C200576E86 /* WaveShape.swift */,
+				EB310CB02D2ED74700576E86 /* ModernTextField.swift */,
+				EB310CB52D2EDBD600576E86 /* AnimatedWaves.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EB310CB22D2ED7FB00576E86 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EB310CB32D2ED81500576E86 /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		EBA354AD2D09E5BB000DA5FC = {
 			isa = PBXGroup;
 			children = (
@@ -128,12 +160,17 @@
 		EBCEDB462D2D1AD6003422ED /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EB310CB22D2ED7FB00576E86 /* Extensions */,
+				EB310CAB2D2ED6A400576E86 /* Components */,
 				EBCEDB402D2D1AD6003422ED /* AccountView.swift */,
 				EBCEDB412D2D1AD6003422ED /* CartView.swift */,
 				EBCEDB422D2D1AD6003422ED /* DeliveryView.swift */,
 				EBCEDB432D2D1AD6003422ED /* DriversView.swift */,
 				EBCEDB442D2D1AD6003422ED /* HomeTabView.swift */,
 				EBCEDB452D2D1AD6003422ED /* SingleDriverView.swift */,
+				EB310CA52D2ECDEE00576E86 /* LoginView.swift */,
+				EB310CA72D2ECF7E00576E86 /* ContentView.swift */,
+				EB22BBE32D314A27003BEFDF /* WelcomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,18 +248,25 @@
 			files = (
 				EBCEDB572D2D1AD6003422ED /* SingleDriverView.swift in Sources */,
 				EBCEDB592D2D1AD6003422ED /* UberUberApp.swift in Sources */,
+				EB310CB42D2ED81500576E86 /* Color.swift in Sources */,
+				EB310CB62D2EDBD600576E86 /* AnimatedWaves.swift in Sources */,
 				EBCEDB532D2D1AD6003422ED /* CartView.swift in Sources */,
 				EBCEDB4B2D2D1AD6003422ED /* DriverViewModel.swift in Sources */,
 				EBCEDB4C2D2D1AD6003422ED /* UserViewModel.swift in Sources */,
 				EBCEDB562D2D1AD6003422ED /* HomeTabView.swift in Sources */,
 				EBB3D4D92D2D55D9005B1495 /* CartViewModel.swift in Sources */,
+				EB310CA82D2ECF7E00576E86 /* ContentView.swift in Sources */,
 				EBCEDB4D2D2D1AD6003422ED /* APIService.swift in Sources */,
 				EBCEDB4F2D2D1AD6003422ED /* Driver.swift in Sources */,
+				EB310CB12D2ED74700576E86 /* ModernTextField.swift in Sources */,
 				EBCEDB552D2D1AD6003422ED /* DriversView.swift in Sources */,
 				EBCEDB522D2D1AD6003422ED /* AccountView.swift in Sources */,
 				EBCEDB4A2D2D1AD6003422ED /* DeliveryViewModel.swift in Sources */,
 				EBCEDB4E2D2D1AD6003422ED /* Delivery.swift in Sources */,
+				EB22BBE42D314A27003BEFDF /* WelcomeView.swift in Sources */,
 				EBCEDB542D2D1AD6003422ED /* DeliveryView.swift in Sources */,
+				EB310CA62D2ECDEE00576E86 /* LoginView.swift in Sources */,
+				EB310CAD2D2ED6C200576E86 /* WaveShape.swift in Sources */,
 				EBCEDB502D2D1AD6003422ED /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

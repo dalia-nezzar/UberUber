@@ -19,7 +19,7 @@ struct APIService {
     }
     
     struct baseURL {
-        static var apiURL = "http://factoryfields.com:3000/api/"
+        static var apiURL = "https://uberuber.factoryfields.com/api/"
     }
     
     /** 

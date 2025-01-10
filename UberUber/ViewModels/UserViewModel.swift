@@ -23,6 +23,7 @@ class UserViewModel: ObservableObject {
         self.service = service
     }
     
+    @MainActor
     func getUser(email: String) async {
         self.state = .loading
         do {
@@ -34,6 +35,7 @@ class UserViewModel: ObservableObject {
         }
     }
     
+    @MainActor
     func registerUser(firstname: String, lastname: String, email: String, birthdate: Date, image_url: URL, is_alive: Int, allow_criminal_record: Int, wants_extra_napkins: Int) async {
         self.state = .loading
         do {
