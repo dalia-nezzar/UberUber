@@ -228,6 +228,27 @@ struct APIService {
     }
     
     
+    /**
+     * Get delivery based on client ID
+     * client_id: String
+     */
+    func fetchDeliveries() async throws -> [Delivery] {
+        
+        let endpoint = baseURL.apiURL + "/deliveries"
+        
+        let url = URL(string: endpoint)
+        
+        let (data, response) = try await URLSession.shared.data(from: url!)
+        
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            throw APIError.invalidStatusCode
+        }
+        
+        let decodeData = try JSONDecoder().decode([Delivery].self, from: data)
+        
+        return decodeData
+        
+    }
     
     /**
      * Get delivery based on client ID

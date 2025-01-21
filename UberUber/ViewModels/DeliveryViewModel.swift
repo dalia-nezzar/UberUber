@@ -26,10 +26,23 @@ class DeliveryViewModel: ObservableObject {
         self.service = service
     }
     
+    @MainActor
     func getDeliveries(client_id: String) async {
         self.state = .loading
         do {
             let apiResponse = try await service.fetchDeliveries(client_id: client_id)
+            self.state = .successes(data: apiResponse)
+        } catch {
+            self.state = .failed(error: error)
+            print(error)
+        }
+    }
+    
+    @MainActor
+    func getDeliveries() async {
+        self.state = .loading
+        do {
+            let apiResponse = try await service.fetchDeliveries()
             self.state = .successes(data: apiResponse)
         } catch {
             self.state = .failed(error: error)

@@ -14,6 +14,7 @@
 		EB310CB12D2ED74700576E86 /* ModernTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB310CB02D2ED74700576E86 /* ModernTextField.swift */; };
 		EB310CB42D2ED81500576E86 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB310CB32D2ED81500576E86 /* Color.swift */; };
 		EB310CB62D2EDBD600576E86 /* AnimatedWaves.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB310CB52D2EDBD600576E86 /* AnimatedWaves.swift */; };
+		EB60BF742D3FC71B003DAC56 /* FilterButtonDeliveries.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB60BF732D3FC71B003DAC56 /* FilterButtonDeliveries.swift */; };
 		EBA354BE2D09E5BC000DA5FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA354BD2D09E5BC000DA5FC /* Assets.xcassets */; };
 		EBAE600D2D3FBA5200CB448F /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE600C2D3FBA5200CB448F /* FilterButton.swift */; };
 		EBAE600F2D3FBA9B00CB448F /* DriverCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE600E2D3FBA9B00CB448F /* DriverCard.swift */; };
@@ -44,6 +45,7 @@
 		EB310CB02D2ED74700576E86 /* ModernTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernTextField.swift; sourceTree = "<group>"; };
 		EB310CB32D2ED81500576E86 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		EB310CB52D2EDBD600576E86 /* AnimatedWaves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedWaves.swift; sourceTree = "<group>"; };
+		EB60BF732D3FC71B003DAC56 /* FilterButtonDeliveries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonDeliveries.swift; sourceTree = "<group>"; };
 		EBA354B62D09E5BB000DA5FC /* UberUber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberUber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA354BD2D09E5BC000DA5FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBAE600C2D3FBA5200CB448F /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		EB310CAB2D2ED6A400576E86 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EB60BF752D3FDA2A003DAC56 /* Deliveries */,
 				EBAE600B2D3FBA2700CB448F /* Drivers */,
 				EB310CAC2D2ED6C200576E86 /* WaveShape.swift */,
 				EB310CB02D2ED74700576E86 /* ModernTextField.swift */,
@@ -95,6 +98,14 @@
 				EB310CB32D2ED81500576E86 /* Color.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EB60BF752D3FDA2A003DAC56 /* Deliveries */ = {
+			isa = PBXGroup;
+			children = (
+				EB60BF732D3FC71B003DAC56 /* FilterButtonDeliveries.swift */,
+			);
+			path = Deliveries;
 			sourceTree = "<group>";
 		};
 		EBA354AD2D09E5BB000DA5FC = {
@@ -270,6 +281,7 @@
 				EBCEDB532D2D1AD6003422ED /* CartView.swift in Sources */,
 				EBCEDB4B2D2D1AD6003422ED /* DriverViewModel.swift in Sources */,
 				EBCEDB4C2D2D1AD6003422ED /* UserViewModel.swift in Sources */,
+				EB60BF742D3FC71B003DAC56 /* FilterButtonDeliveries.swift in Sources */,
 				EBCEDB562D2D1AD6003422ED /* HomeTabView.swift in Sources */,
 				EBAE60112D3FBACC00CB448F /* StatBadge.swift in Sources */,
 				EBB3D4D92D2D55D9005B1495 /* CartViewModel.swift in Sources */,

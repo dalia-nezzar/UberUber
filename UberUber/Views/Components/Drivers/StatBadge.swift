@@ -27,5 +27,11 @@ struct StatBadge: View {
 }
 
 #Preview {
-    StatBadge(icon: "", text: "Oui", color: Color(hex: "#55555"))
+    StatBadge(icon: "", text: "Oui", color: .black)
+    
+}
+
+#Preview {
+    StatBadge(icon: "", text: "Non", color: .blue)
+    
 }
