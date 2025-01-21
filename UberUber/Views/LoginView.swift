@@ -92,22 +92,21 @@ struct LoginView: View {
                     Button(action: {
                         Task {
                             isLoading = true
-                            errorMessage = nil // Réinitialise le message d'erreur
+                            errorMessage = nil
                             
                             if showRegister {
-                                // Appel à la méthode d'inscription
                                 await userViewModel.registerUser(
                                     firstname: firstname,
                                     lastname: lastname,
                                     email: email,
                                     birthdate: birthdate,
-                                    image_url: URL(string: "https://example.com")!,
+                                    image_url: URL(string:  "https://api.dicebear.com/9.x/personas/svg")!,
                                     is_alive: 1,
                                     allow_criminal_record: 0,
                                     wants_extra_napkins: 1
                                 )
+                                
                             } else {
-                                // Appel à la méthode de connexion
                                 await userViewModel.getUser(email: email)
                             }
                             
