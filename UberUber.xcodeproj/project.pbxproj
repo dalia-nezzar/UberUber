@@ -19,6 +19,7 @@
 		EBAE600D2D3FBA5200CB448F /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE600C2D3FBA5200CB448F /* FilterButton.swift */; };
 		EBAE600F2D3FBA9B00CB448F /* DriverCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE600E2D3FBA9B00CB448F /* DriverCard.swift */; };
 		EBAE60112D3FBACC00CB448F /* StatBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE60102D3FBACC00CB448F /* StatBadge.swift */; };
+		EBAE60132D3FE52900CB448F /* DriverCartCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE60122D3FE52900CB448F /* DriverCartCard.swift */; };
 		EBB3D4D52D2D1CCD005B1495 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB3D4D32D2D1CCD005B1495 /* Preview Assets.xcassets */; };
 		EBB3D4D92D2D55D9005B1495 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3D4D82D2D55D9005B1495 /* CartViewModel.swift */; };
 		EBCEDB4A2D2D1AD6003422ED /* DeliveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCEDB352D2D1AD6003422ED /* DeliveryViewModel.swift */; };
@@ -51,6 +52,7 @@
 		EBAE600C2D3FBA5200CB448F /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		EBAE600E2D3FBA9B00CB448F /* DriverCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverCard.swift; sourceTree = "<group>"; };
 		EBAE60102D3FBACC00CB448F /* StatBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBadge.swift; sourceTree = "<group>"; };
+		EBAE60122D3FE52900CB448F /* DriverCartCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverCartCard.swift; sourceTree = "<group>"; };
 		EBB3D4D32D2D1CCD005B1495 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EBB3D4D82D2D55D9005B1495 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		EBCEDB352D2D1AD6003422ED /* DeliveryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryViewModel.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				EBAE600C2D3FBA5200CB448F /* FilterButton.swift */,
 				EBAE600E2D3FBA9B00CB448F /* DriverCard.swift */,
 				EBAE60102D3FBACC00CB448F /* StatBadge.swift */,
+				EBAE60122D3FE52900CB448F /* DriverCartCard.swift */,
 			);
 			path = Drivers;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				EBCEDB572D2D1AD6003422ED /* SingleDriverView.swift in Sources */,
 				EBCEDB592D2D1AD6003422ED /* UberUberApp.swift in Sources */,
 				EB310CB42D2ED81500576E86 /* Color.swift in Sources */,
+				EBAE60132D3FE52900CB448F /* DriverCartCard.swift in Sources */,
 				EB310CB62D2EDBD600576E86 /* AnimatedWaves.swift in Sources */,
 				EBCEDB532D2D1AD6003422ED /* CartView.swift in Sources */,
 				EBCEDB4B2D2D1AD6003422ED /* DriverViewModel.swift in Sources */,

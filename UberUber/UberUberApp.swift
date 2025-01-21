@@ -11,12 +11,15 @@ import SwiftUI
 struct UberUberApp: App {
     
     @StateObject private var userViewModel = UserViewModel(service: APIService())
+    @StateObject private var cartViewModel = CartViewModel(service: APIService())
+
 
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(userViewModel)
+                .environmentObject(cartViewModel)
         }
     }
 }

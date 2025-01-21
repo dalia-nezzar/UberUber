@@ -28,7 +28,7 @@ struct APIService {
      */
     func fetchUser(email: String) async throws -> User {
         
-        let endpoint = baseURL.apiURL + "clients/email/" + email
+        let endpoint = baseURL.apiURL + "clients/email/" + email.lowercased()
         
         let url = URL(string: endpoint)
         

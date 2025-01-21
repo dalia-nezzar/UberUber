@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct HomeTabView: View {
+    
+    @EnvironmentObject var userViewModel: UserViewModel
+    @EnvironmentObject var cartViewModel: CartViewModel
+    
     var body: some View {
         TabView {
             DriversView()
@@ -28,9 +32,12 @@ struct HomeTabView: View {
                 }
         }
         .accentColor(Color(hex: "#28AFB0"))
+        .onAppear {
+            if case .success(let user) = userViewModel.state {
+                Task {
+                    await cartViewModel.getCart(client_id: user.id_client)
+                }
+            }
+        }
     }
-}
-
-#Preview {
-    HomeTabView()
 }

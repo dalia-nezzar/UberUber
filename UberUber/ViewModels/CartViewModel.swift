@@ -25,6 +25,8 @@ class CartViewModel: ObservableObject {
         self.service = service
     }
 
+    
+    @MainActor
     func addDriverToCart(client_id:String, driver_id: String) async {
         self.state = .loading
         do {
@@ -38,6 +40,7 @@ class CartViewModel: ObservableObject {
     }
 
 
+    @MainActor
     func getCart(client_id: String) async {
         self.state = .loading
         do {
@@ -48,6 +51,8 @@ class CartViewModel: ObservableObject {
         }
     }
     
+    
+    @MainActor
     func deleteDriverFromCart(client_id: String, driver_id: String) async {
         self.state = .loading
         do {
@@ -60,6 +65,8 @@ class CartViewModel: ObservableObject {
         }
     }
     
+    
+    @MainActor
     func getDeliveryLine(delivery_id: String) async {
         self.state = .loading
         do {
