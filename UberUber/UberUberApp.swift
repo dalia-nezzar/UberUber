@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct UberUberApp: App {
+    
+    @StateObject private var userViewModel = UserViewModel(service: APIService())
+
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(userViewModel)
         }
     }
 }

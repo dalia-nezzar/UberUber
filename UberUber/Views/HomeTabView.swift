@@ -7,12 +7,30 @@
 
 import SwiftUI
 
-struct TabView: View {
+struct HomeTabView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            DriversView()
+                .tabItem {
+                    Label("Accueil", systemImage: "house")
+                }
+            CartView()
+                .tabItem {
+                    Label("Panier", systemImage: "cart.fill")
+                }
+            DeliveryView()
+                .tabItem {
+                    Label("Mes achats", systemImage: "car.fill")
+                }
+            AccountView()
+                .tabItem {
+                    Label("Mon compte", systemImage: "person.crop.circle.fill")
+                }
+        }
+        .accentColor(Color(hex: "#28AFB0"))
     }
 }
 
 #Preview {
-    TabView()
+    HomeTabView()
 }

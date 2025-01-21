@@ -14,5 +14,5 @@ struct DeliveryView: View {
 }
 
 #Preview {
-    Delivery()
+    DeliveryView()
 }
