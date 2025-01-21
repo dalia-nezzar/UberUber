@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DeliveryView: View {
+    @EnvironmentObject var userViewModel: UserViewModel
+    
     @StateObject private var viewModel: DeliveryViewModel
     @State private var searchText: String = ""
     @State private var selectedFilter: DeliveryFilter = .all
@@ -135,8 +137,10 @@ struct DeliveryView: View {
                 }
             }
             .task {
-                // await viewModel.getDeliveries(client_id:"CLI001")
-                await viewModel.getDeliveries()
+                if case .success(let user) = userViewModel.state {
+                    await viewModel.getDeliveries(client_id: user.id_client)
+                }
+                // await viewModel.getDeliveries();
             }
         }
     }

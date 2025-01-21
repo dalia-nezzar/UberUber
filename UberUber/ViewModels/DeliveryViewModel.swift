@@ -49,7 +49,4 @@ class DeliveryViewModel: ObservableObject {
             print(error)
         }
     }
-    
-
-    
 }
