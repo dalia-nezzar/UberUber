@@ -15,6 +15,8 @@
 		EB310CB42D2ED81500576E86 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB310CB32D2ED81500576E86 /* Color.swift */; };
 		EB310CB62D2EDBD600576E86 /* AnimatedWaves.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB310CB52D2EDBD600576E86 /* AnimatedWaves.swift */; };
 		EB60BF742D3FC71B003DAC56 /* FilterButtonDeliveries.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB60BF732D3FC71B003DAC56 /* FilterButtonDeliveries.swift */; };
+		EB60BF772D3FE291003DAC56 /* SingleDeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB60BF762D3FE291003DAC56 /* SingleDeliveryView.swift */; };
+		EB60BF792D3FE4AF003DAC56 /* DeliveryLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB60BF782D3FE4AF003DAC56 /* DeliveryLine.swift */; };
 		EBA354BE2D09E5BC000DA5FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA354BD2D09E5BC000DA5FC /* Assets.xcassets */; };
 		EBAE600D2D3FBA5200CB448F /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE600C2D3FBA5200CB448F /* FilterButton.swift */; };
 		EBAE600F2D3FBA9B00CB448F /* DriverCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE600E2D3FBA9B00CB448F /* DriverCard.swift */; };
@@ -47,6 +49,8 @@
 		EB310CB32D2ED81500576E86 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		EB310CB52D2EDBD600576E86 /* AnimatedWaves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedWaves.swift; sourceTree = "<group>"; };
 		EB60BF732D3FC71B003DAC56 /* FilterButtonDeliveries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonDeliveries.swift; sourceTree = "<group>"; };
+		EB60BF762D3FE291003DAC56 /* SingleDeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDeliveryView.swift; sourceTree = "<group>"; };
+		EB60BF782D3FE4AF003DAC56 /* DeliveryLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLine.swift; sourceTree = "<group>"; };
 		EBA354B62D09E5BB000DA5FC /* UberUber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberUber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA354BD2D09E5BC000DA5FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBAE600C2D3FBA5200CB448F /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 				EBCEDB3B2D2D1AD6003422ED /* Delivery.swift */,
 				EBCEDB3C2D2D1AD6003422ED /* Driver.swift */,
 				EBCEDB3D2D2D1AD6003422ED /* User.swift */,
+				EB60BF782D3FE4AF003DAC56 /* DeliveryLine.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				EBCEDB402D2D1AD6003422ED /* AccountView.swift */,
 				EBCEDB412D2D1AD6003422ED /* CartView.swift */,
 				EBCEDB422D2D1AD6003422ED /* DeliveryView.swift */,
+				EB60BF762D3FE291003DAC56 /* SingleDeliveryView.swift */,
 				EBCEDB432D2D1AD6003422ED /* DriversView.swift */,
 				EBCEDB442D2D1AD6003422ED /* HomeTabView.swift */,
 				EBCEDB452D2D1AD6003422ED /* SingleDriverView.swift */,
@@ -289,6 +295,7 @@
 				EBCEDB562D2D1AD6003422ED /* HomeTabView.swift in Sources */,
 				EBAE60112D3FBACC00CB448F /* StatBadge.swift in Sources */,
 				EBB3D4D92D2D55D9005B1495 /* CartViewModel.swift in Sources */,
+				EB60BF772D3FE291003DAC56 /* SingleDeliveryView.swift in Sources */,
 				EBAE600F2D3FBA9B00CB448F /* DriverCard.swift in Sources */,
 				EB310CA82D2ECF7E00576E86 /* ContentView.swift in Sources */,
 				EBCEDB4D2D2D1AD6003422ED /* APIService.swift in Sources */,
@@ -298,6 +305,7 @@
 				EBCEDB522D2D1AD6003422ED /* AccountView.swift in Sources */,
 				EBCEDB4A2D2D1AD6003422ED /* DeliveryViewModel.swift in Sources */,
 				EBCEDB4E2D2D1AD6003422ED /* Delivery.swift in Sources */,
+				EB60BF792D3FE4AF003DAC56 /* DeliveryLine.swift in Sources */,
 				EB22BBE42D314A27003BEFDF /* WelcomeView.swift in Sources */,
 				EBAE600D2D3FBA5200CB448F /* FilterButton.swift in Sources */,
 				EBCEDB542D2D1AD6003422ED /* DeliveryView.swift in Sources */,

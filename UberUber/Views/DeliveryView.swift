@@ -190,43 +190,46 @@ struct DeliveryCard: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack {
-                Text(delivery.id_delivery)
-                    .font(.headline)
-                Spacer()
-                Text(stateText)
-                    .font(.caption)
-                    .fontWeight(.medium)
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 6)
-                    .background(stateColor)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
-            }
-            
-            VStack(alignment: .leading, spacing: 8) {
+        NavigationLink(destination: SingleDeliveryView(delivery: delivery)) {
+            VStack(alignment: .leading, spacing: 12) {
                 HStack {
-                    Image(systemName: "person.circle")
-                    Text("Client: \(delivery.id_client)")
+                    Text(delivery.id_delivery)
+                        .font(.headline)
+                    Spacer()
+                    Text(stateText)
+                        .font(.caption)
+                        .fontWeight(.medium)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 6)
+                        .background(stateColor)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
                 }
                 
-                HStack {
-                    Image(systemName: "calendar.circle")
-                    Text("Course prévue le \(formattedDate)")
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack {
+                        Image(systemName: "person.circle")
+                        Text("Client: \(delivery.id_client)")
+                    }
+                    
+                    HStack {
+                        Image(systemName: "calendar.circle")
+                        Text("Course prévue le \(formattedDate)")
+                    }
+                    
+                    HStack {
+                        Image(systemName: "eurosign.circle")
+                        Text("Total: \(formattedPrice)")
+                    }
                 }
-                
-                HStack {
-                    Image(systemName: "eurosign.circle")
-                    Text("Total: \(formattedPrice)")
-                }
+                .foregroundColor(.black.opacity(0.8))
             }
-            .foregroundColor(.black.opacity(0.8))
+            .padding()
+            .background(Color.white)
+            .cornerRadius(12)
+            .shadow(radius: 2)
         }
-        .padding()
-        .background(Color.white)
-        .cornerRadius(12)
-        .shadow(radius: 2)
+        .buttonStyle(PlainButtonStyle())
     }
 }
 
