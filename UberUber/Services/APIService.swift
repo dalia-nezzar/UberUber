@@ -208,7 +208,7 @@ struct APIService {
     func deleteDriverFromCart(client_id: String, driver_id: String) async {
         let headers = ["Content-Type": "text/plain;charset=UTF-8"]
 
-        let request = NSMutableURLRequest(url: NSURL(string: "clients/" + client_id + "/cart/" + driver_id)! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: baseURL.apiURL + "clients/" + client_id + "/cart/" + driver_id)! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
                                             timeoutInterval: 10.0)
         request.httpMethod = "DELETE"
@@ -302,7 +302,7 @@ struct APIService {
     func orderDelivery(client_id: String) async {
         let headers = ["Content-Type": "text/plain;charset=UTF-8"]
 
-        let request = NSMutableURLRequest(url: NSURL(string: "deliveries/" + client_id)! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: baseURL.apiURL + "deliveries/" + client_id)! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
                                             timeoutInterval: 10.0)
         request.httpMethod = "POST"

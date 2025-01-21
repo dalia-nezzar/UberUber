@@ -13,48 +13,73 @@ struct CartView: View {
     
     var body: some View {
         NavigationView {
-            Group {
-                switch cartViewModel.state {
-                case .loading:
-                    ProgressView("Chargement...")
-                case .successes(let drivers):
-                    if drivers.isEmpty {
-                        Text("Votre panier est vide")
-                            .foregroundColor(.gray)
-                    } else {
-                        ScrollView {
-                            LazyVStack(spacing: 12) {
-                                ForEach(drivers, id: \.id) { driver in
-                                    DriverCartCard(driver: driver)
-                                        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                                            if case .success(let user) = userViewModel.state {
-                                                Button(role: .destructive) {
-                                                    Task {
-                                                        await cartViewModel.deleteDriverFromCart(
-                                                            client_id: user.id_client,
-                                                            driver_id: driver.id_driver
-                                                        )
-                                                    }
-                                                } label: {
-                                                    Label("Supprimer", systemImage: "trash")
-                                                }
-                                                .tint(.red)
+            ZStack {
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        Color(hex: "#28AFB0"),
+                        Color(hex: "#DDCECD")
+                    ]),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .ignoresSafeArea()
+                    
+                    Group {
+                        switch cartViewModel.state {
+                        case .loading:
+                            ProgressView("Une petite seconde...")
+                        case .successes(let drivers):
+                            if drivers.isEmpty {
+                                Text("Ton panier est vide")
+                                    .foregroundColor(.white)
+                            } else {
+                                List {
+                                    ForEach(drivers, id: \.id_driver) { driver in
+                                        DriverCartCard(driver: driver)
+                                            .listRowSeparator(.hidden)
+                                            .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                                    }
+                                    .onDelete { indexSet in
+                                        if case .success(let user) = userViewModel.state,
+                                           let index = indexSet.first {
+                                            let driver = drivers[index]
+                                            Task {
+                                                await cartViewModel.deleteDriverFromCart(
+                                                    client_id: user.id_client,
+                                                    driver_id: driver.id_driver
+                                                )
                                             }
                                         }
+                                    }
                                 }
+                                .listStyle(.plain)
                             }
-                            .padding()
+                        case .failed(let error):
+                            Text("Erreur : \(error.localizedDescription)")
+                        case .notAvailable:
+                            Text("Panier non disponible")
+                        default:
+                            EmptyView()
                         }
                     }
-                case .failed(let error):
-                    Text("Erreur : \(error.localizedDescription)")
-                case .notAvailable:
-                    Text("Panier non disponible")
-                default:
-                    EmptyView()
+                }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    ZStack {
+                        Color.white
+                            .frame(width: 800, height: 155)
+                        
+                        Image("TonPanier")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(.trailing, 215)
+                            .frame(height: 25)
+                    }
+                    .ignoresSafeArea(.all)
+                    .padding(.horizontal, 16)
                 }
             }
-            .navigationTitle("Mon Panier")
         }
     }
 }
