@@ -15,6 +15,9 @@
 		EB310CB42D2ED81500576E86 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB310CB32D2ED81500576E86 /* Color.swift */; };
 		EB310CB62D2EDBD600576E86 /* AnimatedWaves.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB310CB52D2EDBD600576E86 /* AnimatedWaves.swift */; };
 		EBA354BE2D09E5BC000DA5FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA354BD2D09E5BC000DA5FC /* Assets.xcassets */; };
+		EBAE600D2D3FBA5200CB448F /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE600C2D3FBA5200CB448F /* FilterButton.swift */; };
+		EBAE600F2D3FBA9B00CB448F /* DriverCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE600E2D3FBA9B00CB448F /* DriverCard.swift */; };
+		EBAE60112D3FBACC00CB448F /* StatBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE60102D3FBACC00CB448F /* StatBadge.swift */; };
 		EBB3D4D52D2D1CCD005B1495 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB3D4D32D2D1CCD005B1495 /* Preview Assets.xcassets */; };
 		EBB3D4D92D2D55D9005B1495 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3D4D82D2D55D9005B1495 /* CartViewModel.swift */; };
 		EBCEDB4A2D2D1AD6003422ED /* DeliveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCEDB352D2D1AD6003422ED /* DeliveryViewModel.swift */; };
@@ -43,6 +46,9 @@
 		EB310CB52D2EDBD600576E86 /* AnimatedWaves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedWaves.swift; sourceTree = "<group>"; };
 		EBA354B62D09E5BB000DA5FC /* UberUber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberUber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA354BD2D09E5BC000DA5FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EBAE600C2D3FBA5200CB448F /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
+		EBAE600E2D3FBA9B00CB448F /* DriverCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverCard.swift; sourceTree = "<group>"; };
+		EBAE60102D3FBACC00CB448F /* StatBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBadge.swift; sourceTree = "<group>"; };
 		EBB3D4D32D2D1CCD005B1495 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EBB3D4D82D2D55D9005B1495 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		EBCEDB352D2D1AD6003422ED /* DeliveryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryViewModel.swift; sourceTree = "<group>"; };
@@ -75,6 +81,7 @@
 		EB310CAB2D2ED6A400576E86 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EBAE600B2D3FBA2700CB448F /* Drivers */,
 				EB310CAC2D2ED6C200576E86 /* WaveShape.swift */,
 				EB310CB02D2ED74700576E86 /* ModernTextField.swift */,
 				EB310CB52D2EDBD600576E86 /* AnimatedWaves.swift */,
@@ -118,6 +125,16 @@
 				EBB3D4D42D2D1CCD005B1495 /* Preview Content */,
 			);
 			path = UberUber;
+			sourceTree = "<group>";
+		};
+		EBAE600B2D3FBA2700CB448F /* Drivers */ = {
+			isa = PBXGroup;
+			children = (
+				EBAE600C2D3FBA5200CB448F /* FilterButton.swift */,
+				EBAE600E2D3FBA9B00CB448F /* DriverCard.swift */,
+				EBAE60102D3FBACC00CB448F /* StatBadge.swift */,
+			);
+			path = Drivers;
 			sourceTree = "<group>";
 		};
 		EBB3D4D42D2D1CCD005B1495 /* Preview Content */ = {
@@ -254,7 +271,9 @@
 				EBCEDB4B2D2D1AD6003422ED /* DriverViewModel.swift in Sources */,
 				EBCEDB4C2D2D1AD6003422ED /* UserViewModel.swift in Sources */,
 				EBCEDB562D2D1AD6003422ED /* HomeTabView.swift in Sources */,
+				EBAE60112D3FBACC00CB448F /* StatBadge.swift in Sources */,
 				EBB3D4D92D2D55D9005B1495 /* CartViewModel.swift in Sources */,
+				EBAE600F2D3FBA9B00CB448F /* DriverCard.swift in Sources */,
 				EB310CA82D2ECF7E00576E86 /* ContentView.swift in Sources */,
 				EBCEDB4D2D2D1AD6003422ED /* APIService.swift in Sources */,
 				EBCEDB4F2D2D1AD6003422ED /* Driver.swift in Sources */,
@@ -264,6 +283,7 @@
 				EBCEDB4A2D2D1AD6003422ED /* DeliveryViewModel.swift in Sources */,
 				EBCEDB4E2D2D1AD6003422ED /* Delivery.swift in Sources */,
 				EB22BBE42D314A27003BEFDF /* WelcomeView.swift in Sources */,
+				EBAE600D2D3FBA5200CB448F /* FilterButton.swift in Sources */,
 				EBCEDB542D2D1AD6003422ED /* DeliveryView.swift in Sources */,
 				EB310CA62D2ECDEE00576E86 /* LoginView.swift in Sources */,
 				EB310CAD2D2ED6C200576E86 /* WaveShape.swift in Sources */,
