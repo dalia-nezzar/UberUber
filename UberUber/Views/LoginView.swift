@@ -120,7 +120,7 @@ struct LoginView: View {
                                     email: email,
                                     password: password,
                                     birthdate: birthdate,
-                                    image_url: URL(string:"https://api.dicebear.com/9.x/personas/jpg")!,
+                                    image_url: URL(string:"https://api.dicebear.com/9.x/personas/jpg?seed="+email)!,
                                     is_alive: 1,
                                     allow_criminal_record: 0,
                                     wants_extra_napkins: 1

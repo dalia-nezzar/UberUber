@@ -96,7 +96,7 @@ struct DriverCard: View {
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 16))
         .shadow(radius: 5)
-        .alert("Ajouté au panier", isPresented: $showAddedToCartAlert) {
+        .alert("Réservation ajoutée au panier", isPresented: $showAddedToCartAlert) {
                     Button("OK", role: .cancel) { }
                 }
     }

@@ -149,6 +149,11 @@ struct CartView: View {
                         )
                     }
                 }
+                .task {
+                    if case .success(let user) = userViewModel.state {
+                        await cartViewModel.getCart(client_id: user.id_client)
+                    }
+                }
             }
         }
     }

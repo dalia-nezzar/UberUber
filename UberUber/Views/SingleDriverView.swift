@@ -125,7 +125,7 @@ struct SingleDriverView: View {
                 .padding()
             }
         }
-        .alert("Conducteur ajouté au panier", isPresented: $showAddedToCartAlert) {
+        .alert("Réservation ajoutée au panier", isPresented: $showAddedToCartAlert) {
             Button("Super !", role: .cancel) { }
         }
         .navigationBarBackButtonHidden(true)
