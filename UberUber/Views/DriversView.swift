@@ -7,17 +7,13 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct DriversView: View {
-    @StateObject private var viewModel: DriverViewModel
+    @EnvironmentObject private var driverViewModel: DriverViewModel
+    @EnvironmentObject private var userViewModel: UserViewModel
+    
     @State private var selectedFilter: DriverFilter = .all
+    @State private var applyUserPreferences: Bool = false
     
-    init(viewModel: DriverViewModel = DriverViewModel(service: APIService())) {
-        _viewModel = StateObject(wrappedValue: viewModel)
-    }
-    
-    // Énumération pour les filtres
     enum DriverFilter: String, CaseIterable {
         case all = "Tous"
         case safest = "Plus sûrs"
@@ -35,17 +31,32 @@ struct DriversView: View {
     }
     
     var filteredDrivers: [Driver] {
-        guard case .successes(let drivers) = viewModel.state else { return [] }
+        guard case .successes(let drivers) = driverViewModel.state else { return [] }
         
+        // First apply user preferences if enabled
+        let preferencesFiltered = applyUserPreferences ? drivers.filter { driver in
+            guard case .success(let user) = userViewModel.state else { return true }
+            
+            // Apply criminal record preference
+            if user.allow_criminal_record == 1 && driver.has_criminal_record == 1 {
+                return false
+            }
+            
+            // Add other user preferences here if needed
+            
+            return true
+        } : drivers
+        
+        // Then apply the selected category filter
         switch selectedFilter {
         case .all:
-            return drivers
+            return preferencesFiltered
         case .safest:
-            return drivers.sorted { $0.days_since_last_accident > $1.days_since_last_accident }
+            return preferencesFiltered.sorted { $0.days_since_last_accident > $1.days_since_last_accident }
         case .cheapest:
-            return drivers.sorted { $0.price < $1.price }
+            return preferencesFiltered.sorted { $0.price < $1.price }
         case .newest:
-            return drivers.sorted { $0.created_at > $1.created_at }
+            return preferencesFiltered.sorted { $0.created_at > $1.created_at }
         }
     }
     
@@ -63,7 +74,7 @@ struct DriversView: View {
                 .ignoresSafeArea()
                 
                 VStack(spacing: 0) {
-                    // Barre de filtres
+                    // Category filters
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 12) {
                             ForEach(DriverFilter.allCases, id: \.self) { filter in
@@ -79,10 +90,22 @@ struct DriversView: View {
                     .padding(.vertical, 8)
                     .background(Color.white)
                     
+                    // User preferences toggle
+                    HStack {
+                        Toggle(isOn: $applyUserPreferences) {
+                            Label("Appliquer les préférences personnelles", systemImage: "person.fill")
+                                .font(.subheadline)
+                        }
+                        .toggleStyle(SwitchToggleStyle(tint: Color(hex: "#28AFB0")))
+                    }
+                    .padding(.horizontal)
+                    .padding(.vertical, 8)
+                    .background(Color.white)
+                    
                     // Liste des conducteurs
                     ScrollView {
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 300), spacing: 16)], spacing: 16) {
-                            switch viewModel.state {
+                            switch driverViewModel.state {
                             case .notAvailable, .loading:
                                 ProgressView()
                                     .scaleEffect(1.5)
@@ -93,9 +116,6 @@ struct DriversView: View {
                                         DriverCard(driver: driver)
                                     }
                                 }
-                                .navigationDestination(for: Driver.self) { driver in
-                                    SingleDriverView(driver: driver)
-                                }
                             case .failed(let error):
                                 Text("Erreur: \(error.localizedDescription)")
                                     .foregroundColor(.red)
@@ -105,8 +125,12 @@ struct DriversView: View {
                         }
                         .padding()
                         .animation(.spring(), value: selectedFilter)
+                        .animation(.spring(), value: applyUserPreferences)
                     }
                 }
+            }
+            .navigationDestination(for: Driver.self) { driver in
+                SingleDriverView(driver: driver)
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -119,14 +143,8 @@ struct DriversView: View {
                 }
             }
             .task {
-                await viewModel.getDrivers()
+                await driverViewModel.getDrivers()
             }
         }
     }
-}
-
-
-
-#Preview {
-    DriversView()
 }

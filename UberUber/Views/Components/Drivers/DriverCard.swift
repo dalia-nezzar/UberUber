@@ -57,6 +57,12 @@ struct DriverCard: View {
                         text: "Permis",
                         color: driver.has_driving_licence == 1 ? .green : .red
                     )
+                    
+                    StatBadge(
+                        icon: driver.has_criminal_record == 1 ? "exclamationmark.shield.fill" : "checkmark.shield.fill",
+                        text: driver.has_criminal_record == 1 ? "Casier" : "Clean",
+                        color: driver.has_criminal_record == 1 ? .red: .green
+                    )
                 }
                 
                 // Description
