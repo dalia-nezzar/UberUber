@@ -64,7 +64,6 @@ struct LoginView: View {
                     
                     VStack(spacing: 16) {
                         ModernTextField(placeholder: "Email", text: $email, systemImage: "envelope")
-                        ModernTextField(placeholder: "Mot de passe", text: $password, systemImage: "key", isSecure: true)
                         
                         if showRegister {
                             ModernTextField(placeholder: "Prénom", text: $firstname, systemImage: "person")
@@ -81,6 +80,8 @@ struct LoginView: View {
                                 .cornerRadius(12)
                                 .transition(.move(edge: .top).combined(with: .opacity))
                         }
+                        
+                        ModernTextField(placeholder: "Mot de passe", text: $password, systemImage: "key", isSecure: true)
                     }
                     .padding(.horizontal)
                     
