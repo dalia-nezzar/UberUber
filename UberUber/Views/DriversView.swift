@@ -50,7 +50,7 @@ struct DriversView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 LinearGradient(
                     gradient: Gradient(colors: [
@@ -89,8 +89,12 @@ struct DriversView: View {
                                     .frame(maxWidth: .infinity, minHeight: 300)
                             case .successes:
                                 ForEach(filteredDrivers, id: \.id_driver) { driver in
-                                    DriverCard(driver: driver)
-                                        .transition(.scale.combined(with: .opacity))
+                                    NavigationLink(value: driver) {
+                                        DriverCard(driver: driver)
+                                    }
+                                }
+                                .navigationDestination(for: Driver.self) { driver in
+                                    SingleDriverView(driver: driver)
                                 }
                             case .failed(let error):
                                 Text("Erreur: \(error.localizedDescription)")

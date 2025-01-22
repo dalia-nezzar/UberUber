@@ -14,6 +14,7 @@ class CartViewModel: ObservableObject {
         case loading
         case success(data: Driver)
         case successes(data: [Driver])
+        case emptySuccess(data: String)
         case failed(error: Error)
     }
     
@@ -64,19 +65,7 @@ class CartViewModel: ObservableObject {
             print(error)
         }
     }
-    
-    
-    @MainActor
-    func getDeliveryLine(delivery_id: String) async {
-        self.state = .loading
-        do {
-            let apiResponse = try await service.fetchDeliveryLine(delivery_id: delivery_id)
-            self.state = .successes(data: apiResponse)
-        } catch {
-            self.state = .failed(error: error)
-            print(error)
-        }
-    }
+
     
     
 

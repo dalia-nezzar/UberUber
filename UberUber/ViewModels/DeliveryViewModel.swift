@@ -49,4 +49,19 @@ class DeliveryViewModel: ObservableObject {
             print(error)
         }
     }
+    
+    @MainActor
+    func orderFromCart(client_id: String) async {
+        self.state = .loading
+        
+        print(client_id)
+        do {
+            await service.orderDelivery(client_id: client_id)
+            let apiResponse = try await service.fetchDeliveries(client_id: client_id)
+            self.state = .successes(data: apiResponse)
+        } catch {
+            self.state = .failed(error: error)
+            print(error)
+        }
+    }
 }

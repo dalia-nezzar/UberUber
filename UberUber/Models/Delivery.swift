@@ -13,5 +13,8 @@ struct Delivery: Decodable, Hashable {
     var total_price: String
     var state: String
     var id_client: String
+    var is_alive: Int
+    var allow_criminal_record: Int
+    var wants_extra_napkins: Int
     var created_at: String
 }

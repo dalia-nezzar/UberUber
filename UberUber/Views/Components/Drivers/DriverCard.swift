@@ -10,6 +10,11 @@ import SwiftUI
 struct DriverCard: View {
     let driver: Driver
     
+    @EnvironmentObject var cartViewModel: CartViewModel
+    @EnvironmentObject var userViewModel: UserViewModel
+    @State private var showAddedToCartAlert = false
+
+
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -62,11 +67,16 @@ struct DriverCard: View {
                 
                 // Bouton Ajouter au panier
                 Button(action: {
-                    // Action d'ajout au panier à implémenter
+                    Task {
+                        if case .success(let user) = userViewModel.state {
+                            await cartViewModel.addDriverToCart(client_id: user.id_client, driver_id: driver.id_driver)
+                            showAddedToCartAlert = true
+                        }
+                    }
                 }) {
                     HStack {
                         Image(systemName: "cart.badge.plus")
-                        Text("Ajouter au panier")
+                        Text("Réserver ce conducteur")
                     }
                     .frame(maxWidth: .infinity)
                     .padding()
@@ -80,6 +90,9 @@ struct DriverCard: View {
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 16))
         .shadow(radius: 5)
+        .alert("Ajouté au panier", isPresented: $showAddedToCartAlert) {
+                    Button("OK", role: .cancel) { }
+                }
     }
 }
 

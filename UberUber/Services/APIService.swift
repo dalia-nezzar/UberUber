@@ -56,7 +56,6 @@ struct APIService {
      *  wants_extra_napkins: Int
      */
     func registerUser(firstname: String, lastname: String, email: String, birthdate: Date, image_url: URL, is_alive: Int, allow_criminal_record: Int, wants_extra_napkins: Int) async {
-        // URL de l'API
         guard let url = URL(string: "\(baseURL.apiURL)clients") else {
             print("URL invalide")
             return
@@ -110,9 +109,9 @@ struct APIService {
      * Get driver by ID
      * driver_id: String
      */
-    func fetchDriver(driver_id: String) async throws -> Driver {
+    func fetchDriver(id_driver: String) async throws -> Driver {
         
-        let endpoint = baseURL.apiURL + "drivers/" + driver_id
+        let endpoint = baseURL.apiURL + "drivers/" + id_driver
         
         let url = URL(string: endpoint)
         
@@ -300,25 +299,38 @@ struct APIService {
      * client_id: String
      */
     func orderDelivery(client_id: String) async {
-        let headers = ["Content-Type": "text/plain;charset=UTF-8"]
-
-        let request = NSMutableURLRequest(url: NSURL(string: baseURL.apiURL + "deliveries/" + client_id)! as URL,
-                                                cachePolicy: .useProtocolCachePolicy,
-                                            timeoutInterval: 10.0)
+        guard let url = URL(string: "\(baseURL.apiURL)deliveries") else {
+            print("URL invalide")
+            return
+        }
+        
+        let parameters: [String: Any] = [
+            "id_client": client_id
+        ]
+        
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
+            print("Erreur lors de la sérialisation JSON")
+            return
+        }
+        
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.allHTTPHeaderFields = headers
-
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-          if (error != nil) {
-            print(error as Any)
-          } else {
-            let httpResponse = response as? HTTPURLResponse
-              print(httpResponse as Any)
-          }
-        })
-
-        dataTask.resume()
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = httpBody
+        
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                print("Statut HTTP : \(httpResponse.statusCode)")
+            }
+            
+            if let responseData = String(data: data, encoding: .utf8) {
+                print("Réponse : \(responseData)")
+            }
+        } catch {
+            print("Erreur lors de l'appel à l'API : \(error)")
+        }
     }
     
     

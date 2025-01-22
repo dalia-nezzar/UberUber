@@ -26,10 +26,10 @@ class DriverViewModel: ObservableObject {
     }
     
     @MainActor
-    func getDriver(driver_id: String) async {
+    func getDriver(id_driver: String) async {
         self.state = .loading
         do {
-            let apiResponse = try await service.fetchDriver(driver_id: driver_id)
+            let apiResponse = try await service.fetchDriver(id_driver: id_driver)
             self.state = .success(data: apiResponse)
         } catch {
             self.state = .failed(error: error)

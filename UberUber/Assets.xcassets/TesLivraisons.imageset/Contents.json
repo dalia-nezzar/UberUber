@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Tes_livraisons.png",
+      "filename" : "Tes réservations.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Tes_livraisons 1.png",
+      "filename" : "Tes réservations 2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Tes_livraisons 2.png",
+      "filename" : "Tes réservations 1.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

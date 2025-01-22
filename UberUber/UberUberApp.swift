@@ -12,6 +12,7 @@ struct UberUberApp: App {
     
     @StateObject private var userViewModel = UserViewModel(service: APIService())
     @StateObject private var cartViewModel = CartViewModel(service: APIService())
+    @StateObject private var driverViewModel = DriverViewModel(service: APIService())
 
 
     
@@ -20,6 +21,7 @@ struct UberUberApp: App {
             ContentView()
                 .environmentObject(userViewModel)
                 .environmentObject(cartViewModel)
+                .environmentObject(driverViewModel)
         }
     }
 }

@@ -78,7 +78,7 @@ struct DeliveryView: View {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(.black.opacity(0.5))
                         
-                        TextField("Rechercher une livraison", text: $searchText)
+                        TextField("Rechercher une réservation", text: $searchText)
                             .textFieldStyle(PlainTextFieldStyle())
                     }
                     .padding()
