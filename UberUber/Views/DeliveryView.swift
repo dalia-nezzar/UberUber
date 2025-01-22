@@ -9,14 +9,11 @@ import SwiftUI
 
 struct DeliveryView: View {
     @EnvironmentObject var userViewModel: UserViewModel
+    @EnvironmentObject var deliveryViewModel: DeliveryViewModel
     
-    @StateObject private var viewModel: DeliveryViewModel
     @State private var searchText: String = ""
     @State private var selectedFilter: DeliveryFilter = .all
     
-    init(viewModel: DeliveryViewModel = DeliveryViewModel(service: APIService())) {
-        _viewModel = StateObject(wrappedValue: viewModel)
-    }
     
     // Enumération pour les filtres
     enum DeliveryFilter: String, CaseIterable {
@@ -36,7 +33,7 @@ struct DeliveryView: View {
     }
     
     var filteredDeliveries: [Delivery] {
-        guard case .successes(let deliveries) = viewModel.state else { return [] }
+        guard case .successes(let deliveries) = deliveryViewModel.state else { return [] }
         
         var filtered = deliveries
         
@@ -104,7 +101,7 @@ struct DeliveryView: View {
                     // Liste des livraisons
                     ScrollView {
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 300), spacing: 16)], spacing: 16) {
-                            switch viewModel.state {
+                            switch deliveryViewModel.state {
                             case .notAvailable, .loading:
                                 ProgressView()
                                     .scaleEffect(1.5)
@@ -129,18 +126,18 @@ struct DeliveryView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Image("TesLivraisons")
+                    Image("TesRéservations")
                         .resizable()
                         .scaledToFit()
                         .frame(height: 20)
-                        .padding(.trailing, 210)
+                        .padding(.trailing, 180)
                 }
             }
             .task {
                 if case .success(let user) = userViewModel.state {
-                    await viewModel.getDeliveries(client_id: user.id_client)
+                    await deliveryViewModel.getDeliveries(client_id: user.id_client)
                 }
-                // await viewModel.getDeliveries();
+                // await deliveryViewModel.getDeliveries();
             }
         }
     }
@@ -211,10 +208,6 @@ struct DeliveryCard: View {
                 }
                 
                 VStack(alignment: .leading, spacing: 8) {
-                    HStack {
-                        Image(systemName: "person.circle")
-                        Text("Client: \(delivery.id_client)")
-                    }
                     
                     HStack {
                         Image(systemName: "calendar.circle")
