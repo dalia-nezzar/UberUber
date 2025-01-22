@@ -58,6 +58,7 @@ class UserViewModel: ObservableObject {
                     firstname: firstname,
                     lastname: lastname,
                     email: email,
+                    password: password,
                     birthdate: birthdate,
                     image_url: image_url,
                     is_alive: is_alive,
