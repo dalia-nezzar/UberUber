@@ -11,6 +11,7 @@ struct LoginView: View {
     @EnvironmentObject var userViewModel: UserViewModel
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var passwordConfirmation: String = ""
     @State private var isLoading: Bool = false
     @State private var errorMessage: String?
     @State private var showRegister: Bool = false
@@ -82,6 +83,15 @@ struct LoginView: View {
                         }
                         
                         ModernTextField(placeholder: "Mot de passe", text: $password, systemImage: "key", isSecure: true)
+                        
+                        if showRegister {
+                            ModernTextField(
+                                placeholder: "Confirmation",
+                                text: $passwordConfirmation,
+                                systemImage: passwordConfirmation.isEmpty ? "key" : (password == passwordConfirmation ? "checkmark" : "xmark"),
+                                isSecure: true
+                            )
+                        }
                     }
                     .padding(.horizontal)
                     
@@ -98,6 +108,12 @@ struct LoginView: View {
                             errorMessage = nil
                             
                             if showRegister {
+                                guard password == passwordConfirmation else {
+                                    errorMessage = "Les mots de passe ne correspondent pas."
+                                    isLoading = false
+                                    return
+                                }
+                                
                                 await userViewModel.registerUser(
                                     firstname: firstname,
                                     lastname: lastname,
