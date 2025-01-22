@@ -38,7 +38,7 @@ struct DriversView: View {
             guard case .success(let user) = userViewModel.state else { return true }
             
             // Apply criminal record preference
-            if user.allow_criminal_record == 1 && driver.has_criminal_record == 1 {
+            if user.allow_criminal_record == 0 && driver.has_criminal_record == 1 {
                 return false
             }
             
