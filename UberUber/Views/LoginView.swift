@@ -120,7 +120,7 @@ struct LoginView: View {
                                     email: email,
                                     password: password,
                                     birthdate: birthdate,
-                                    image_url: URL(string:  "https://api.dicebear.com/9.x/personas/svg")!,
+                                    image_url: URL(string:"https://api.dicebear.com/9.x/personas/jpg")!,
                                     is_alive: 1,
                                     allow_criminal_record: 0,
                                     wants_extra_napkins: 1
@@ -134,7 +134,7 @@ struct LoginView: View {
                             
                             // Gestion des erreurs
                             if case .failed(let error) = userViewModel.state {
-                                errorMessage = error.localizedDescription
+                                errorMessage = "Le mot de passe ou l'email est incorrect."
                             } else if case .success = userViewModel.state {
                                 errorMessage = nil
                             }
