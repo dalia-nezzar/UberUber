@@ -12,6 +12,7 @@ struct User: Decodable, Hashable {
     var firstname: String
     var lastname: String
     var email: String
+    var password: String
     var birthdate: String
     var image_url: URL
     var is_alive: Int

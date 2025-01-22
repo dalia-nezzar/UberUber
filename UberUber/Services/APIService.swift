@@ -26,9 +26,9 @@ struct APIService {
      *  Get specific user by email
      *  email: String
      */
-    func fetchUser(email: String) async throws -> User {
+    func fetchUser(email: String, password: String) async throws -> User {
         
-        let endpoint = baseURL.apiURL + "clients/email/" + email.lowercased()
+        let endpoint = baseURL.apiURL + "clients/email/" + email.lowercased() + "/pass/" + password
         
         let url = URL(string: endpoint)
         
@@ -55,7 +55,7 @@ struct APIService {
      *  allow_criminal_record: Int
      *  wants_extra_napkins: Int
      */
-    func registerUser(firstname: String, lastname: String, email: String, birthdate: Date, image_url: URL, is_alive: Int, allow_criminal_record: Int, wants_extra_napkins: Int) async {
+    func registerUser(firstname: String, lastname: String, email: String, password: String, birthdate: Date, image_url: URL, is_alive: Int, allow_criminal_record: Int, wants_extra_napkins: Int) async {
         guard let url = URL(string: "\(baseURL.apiURL)clients") else {
             print("URL invalide")
             return
@@ -71,6 +71,7 @@ struct APIService {
             "firstname": firstname,
             "lastname": lastname,
             "email": email,
+            "password": password,
             "birthdate": birthdateString,
             "image_url": image_url.absoluteString,
             "is_alive": is_alive,

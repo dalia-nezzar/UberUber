@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @EnvironmentObject var userViewModel: UserViewModel
     @State private var email: String = ""
+    @State private var password: String = ""
     @State private var isLoading: Bool = false
     @State private var errorMessage: String?
     @State private var showRegister: Bool = false
@@ -63,6 +64,7 @@ struct LoginView: View {
                     
                     VStack(spacing: 16) {
                         ModernTextField(placeholder: "Email", text: $email, systemImage: "envelope")
+                        ModernTextField(placeholder: "Mot de passe", text: $password, systemImage: "key", isSecure: true)
                         
                         if showRegister {
                             ModernTextField(placeholder: "Prénom", text: $firstname, systemImage: "person")
@@ -99,6 +101,7 @@ struct LoginView: View {
                                     firstname: firstname,
                                     lastname: lastname,
                                     email: email,
+                                    password: password,
                                     birthdate: birthdate,
                                     image_url: URL(string:  "https://api.dicebear.com/9.x/personas/svg")!,
                                     is_alive: 1,
@@ -107,7 +110,7 @@ struct LoginView: View {
                                 )
                                 
                             } else {
-                                await userViewModel.getUser(email: email)
+                                await userViewModel.getUser(email: email, password: password)
                             }
                             
                             isLoading = false

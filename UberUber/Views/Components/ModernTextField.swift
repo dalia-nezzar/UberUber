@@ -11,6 +11,7 @@ struct ModernTextField: View {
     let placeholder: String
     @Binding var text: String
     let systemImage: String
+    var isSecure: Bool = false
     
     var body: some View {
         HStack {
@@ -18,8 +19,13 @@ struct ModernTextField: View {
                 .foregroundStyle(.white)
                 .frame(width: 24)
             
-            TextField(placeholder, text: $text)
-                .foregroundStyle(.white)
+            if isSecure {
+                SecureField(placeholder, text: $text)
+                    .foregroundStyle(.white)
+            } else {
+                TextField(placeholder, text: $text)
+                    .foregroundStyle(.white)
+            }
         }
         .padding()
         .background(Color.white.opacity(0.2))

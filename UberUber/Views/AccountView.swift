@@ -240,6 +240,7 @@ struct AccountView: View {
                         firstname: modifiedFields["firstname"] as? String ?? user.firstname,
                         lastname: modifiedFields["lastname"] as? String ?? user.lastname,
                         email: modifiedFields["email"] as? String ?? user.email,
+                        password: modifiedFields["password"] as? String ?? user.password,
                         birthdate: modifiedFields["birthdate"] as? Date ?? (DateFormatter().date(from: user.birthdate) ?? Date()),
                         image_url: user.image_url,
                         is_alive: modifiedFields["is_alive"] as? Int ?? user.is_alive,
