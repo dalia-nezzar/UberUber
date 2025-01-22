@@ -48,14 +48,14 @@ struct SingleDeliveryView: View {
     
     private var deliveryDetails: some View {
         VStack(spacing: 16) {
-            InfoCard {
+            DeliveryInfoCard {
                 DetailRow(icon: "calendar", title: "Date de la course", value: formattedDate)
                 DetailRow(icon: "heart.fill", title: "En vie", value: delivery.is_alive == 1 ? "Oui" : "Non")
                 DetailRow(icon: "exclamationmark.shield.fill", title: "Casier judiciaire", value: delivery.allow_criminal_record == 1 ? "Toléré" : "Non toléré")
                 DetailRow(icon: "square.stack.fill", title: "Serviettes supplémentaires", value: delivery.wants_extra_napkins == 1 ? "Oui" : "Non")
             }
             
-            InfoCard {
+            DeliveryInfoCard {
                 DetailRow(icon: "eurosign.circle.fill", title: "Total", value: formattedPrice, highlighted: true)
                 DetailRow(icon: "flag.circle.fill", title: "Status", value: delivery.state.capitalized)
             }
@@ -102,81 +102,5 @@ struct SingleDeliveryView: View {
         .task {
             await deliveryLineViewModel.getDeliveryLines(delivery_id: delivery.id_delivery)
         }
-    }
-}
-
-// MARK: - Supporting Views
-struct InfoCard<Content: View>: View {
-    let content: Content
-    
-    init(@ViewBuilder content: () -> Content) {
-        self.content = content()
-    }
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            content
-        }
-        .padding()
-        .background(Color(.systemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 12))
-        .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: 2)
-    }
-}
-
-struct DetailRow: View {
-    let icon: String
-    let title: String
-    let value: String
-    var highlighted: Bool = false
-    
-    var body: some View {
-        HStack {
-            Image(systemName: icon)
-                .foregroundColor(highlighted ? .blue : .secondary)
-                .frame(width: 24)
-            
-            Text(title)
-                .foregroundColor(.secondary)
-            
-            Spacer()
-            
-            Text(value)
-                .fontWeight(highlighted ? .semibold : .regular)
-        }
-    }
-}
-
-struct ErrorView: View {
-    let error: Error
-    
-    var body: some View {
-        VStack(spacing: 16) {
-            Image(systemName: "exclamationmark.triangle.fill")
-                .font(.largeTitle)
-                .foregroundColor(.red)
-            
-            Text("Erreur")
-                .font(.headline)
-            
-            Text(error.localizedDescription)
-                .multilineTextAlignment(.center)
-                .foregroundColor(.secondary)
-        }
-        .padding()
-        .frame(maxWidth: .infinity)
-        .background(Color(.systemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 12))
-        .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: 2)
-    }
-}
-
-// MARK: - State Extension
-extension DeliveryLineViewModel.State {
-    var drivers: [Driver] {
-        if case .successes(let drivers) = self {
-            return drivers
-        }
-        return []
     }
 }

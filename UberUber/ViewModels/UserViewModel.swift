@@ -46,6 +46,53 @@ class UserViewModel: ObservableObject {
             self.state = .failed(error: error)
         }
     }
+    
+    
+    @MainActor
+        func editUser(id_client: String, firstname: String, lastname: String, email: String, birthdate: Date, image_url: URL, is_alive: Int, allow_criminal_record: Int, wants_extra_napkins: Int) async {
+            let currentState = self.state
+            
+            do {
+                await service.editUser(
+                    id_client: id_client,
+                    firstname: firstname,
+                    lastname: lastname,
+                    email: email,
+                    birthdate: birthdate,
+                    image_url: image_url,
+                    is_alive: is_alive,
+                    allow_criminal_record: allow_criminal_record,
+                    wants_extra_napkins: wants_extra_napkins
+                )
+                
+                // Mettre à jour directement l'utilisateur actuel sans passer par loading
+                if case .success(let currentUser) = currentState {
+                    let updatedUser = User(
+                        id_client: id_client,
+                        firstname: firstname,
+                        lastname: lastname,
+                        email: email,
+                        birthdate: formatDateForAPI(birthdate),
+                        image_url: image_url,
+                        is_alive: is_alive,
+                        allow_criminal_record: allow_criminal_record,
+                        wants_extra_napkins: wants_extra_napkins,
+                        created_at: currentUser.created_at
+                    )
+                    self.state = .success(data: updatedUser)
+                    
+                    let apiResponse = try await service.fetchUser(email: email)
+                }
+            } catch {
+                self.state = .failed(error: error)
+            }
+        }
+        
+        private func formatDateForAPI(_ date: Date) -> String {
+            let isoFormatter = ISO8601DateFormatter()
+            isoFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+            return isoFormatter.string(from: date)
+        }
 
     
 }

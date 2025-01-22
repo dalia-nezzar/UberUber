@@ -104,6 +104,55 @@ struct APIService {
     }
     
     
+    func editUser(id_client: String, firstname: String, lastname: String, email: String, birthdate: Date, image_url: URL, is_alive: Int, allow_criminal_record: Int, wants_extra_napkins: Int) async {
+        guard let url = URL(string: "\(baseURL.apiURL)clients/"+id_client) else {
+            print("URL invalide")
+            return
+        }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        let birthdateString = dateFormatter.string(from: birthdate)
+        
+        let parameters: [String: Any] = [
+            "firstname": firstname,
+            "lastname": lastname,
+            "email": email,
+            "birthdate": birthdateString,
+            "image_url": image_url.absoluteString,
+            "is_alive": is_alive,
+            "allow_criminal_record": allow_criminal_record,
+            "wants_extra_napkins": wants_extra_napkins
+        ]
+        
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
+            print("Erreur lors de la sérialisation JSON")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = httpBody
+        
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                print("Statut HTTP : \(httpResponse.statusCode)")
+            }
+            
+            if let responseData = String(data: data, encoding: .utf8) {
+                print("Réponse : \(responseData)")
+            }
+        } catch {
+            print("Erreur lors de l'appel à l'API : \(error)")
+        }
+    }
+    
+    
     
     /**
      * Get driver by ID
@@ -134,7 +183,7 @@ struct APIService {
     func fetchDrivers() async throws -> [Driver] {
         
     
-        let endpoint = baseURL.apiURL + "drivers/"
+        let endpoint = baseURL.apiURL + "drivers"
         
         let url = URL(string: endpoint)
         

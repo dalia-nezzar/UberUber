@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		EB22BBE42D314A27003BEFDF /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22BBE32D314A27003BEFDF /* WelcomeView.swift */; };
+		EB3034B42D41296B005A227B /* ToggleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3034B32D41296B005A227B /* ToggleRow.swift */; };
+		EB3034B62D4129B9005A227B /* InfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3034B52D4129B9005A227B /* InfoRow.swift */; };
+		EB3034B82D413395005A227B /* AccountInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3034B72D413395005A227B /* AccountInfoCard.swift */; };
+		EB3034BA2D4133D1005A227B /* DeliveryLineViewModel.State.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3034B92D4133D1005A227B /* DeliveryLineViewModel.State.swift */; };
+		EB3034BD2D41340F005A227B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3034BC2D41340F005A227B /* ErrorView.swift */; };
+		EB3034C02D413453005A227B /* DetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3034BF2D413453005A227B /* DetailRow.swift */; };
+		EB3034C22D41347C005A227B /* DeliveryInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3034C12D41347C005A227B /* DeliveryInfoCard.swift */; };
+		EB3034C42D4134CD005A227B /* DeliveryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3034C32D4134CD005A227B /* DeliveryCard.swift */; };
 		EB310CA62D2ECDEE00576E86 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB310CA52D2ECDEE00576E86 /* LoginView.swift */; };
 		EB310CA82D2ECF7E00576E86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB310CA72D2ECF7E00576E86 /* ContentView.swift */; };
 		EB310CAD2D2ED6C200576E86 /* WaveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB310CAC2D2ED6C200576E86 /* WaveShape.swift */; };
@@ -42,6 +50,14 @@
 
 /* Begin PBXFileReference section */
 		EB22BBE32D314A27003BEFDF /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		EB3034B32D41296B005A227B /* ToggleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRow.swift; sourceTree = "<group>"; };
+		EB3034B52D4129B9005A227B /* InfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRow.swift; sourceTree = "<group>"; };
+		EB3034B72D413395005A227B /* AccountInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoCard.swift; sourceTree = "<group>"; };
+		EB3034B92D4133D1005A227B /* DeliveryLineViewModel.State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLineViewModel.State.swift; sourceTree = "<group>"; };
+		EB3034BC2D41340F005A227B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		EB3034BF2D413453005A227B /* DetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRow.swift; sourceTree = "<group>"; };
+		EB3034C12D41347C005A227B /* DeliveryInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInfoCard.swift; sourceTree = "<group>"; };
+		EB3034C32D4134CD005A227B /* DeliveryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCard.swift; sourceTree = "<group>"; };
 		EB310CA52D2ECDEE00576E86 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EB310CA72D2ECF7E00576E86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EB310CAC2D2ED6C200576E86 /* WaveShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShape.swift; sourceTree = "<group>"; };
@@ -86,9 +102,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB3034B22D412956005A227B /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				EB3034B32D41296B005A227B /* ToggleRow.swift */,
+				EB3034B52D4129B9005A227B /* InfoRow.swift */,
+				EB3034B72D413395005A227B /* AccountInfoCard.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		EB3034BB2D413404005A227B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EB3034BC2D41340F005A227B /* ErrorView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EB3034BE2D413439005A227B /* Line */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Line;
+			sourceTree = "<group>";
+		};
 		EB310CAB2D2ED6A400576E86 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EB3034BB2D413404005A227B /* Utils */,
+				EB3034B22D412956005A227B /* Clients */,
 				EB60BF752D3FDA2A003DAC56 /* Deliveries */,
 				EBAE600B2D3FBA2700CB448F /* Drivers */,
 				EB310CAC2D2ED6C200576E86 /* WaveShape.swift */,
@@ -102,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				EB310CB32D2ED81500576E86 /* Color.swift */,
+				EB3034B92D4133D1005A227B /* DeliveryLineViewModel.State.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -109,7 +153,11 @@
 		EB60BF752D3FDA2A003DAC56 /* Deliveries */ = {
 			isa = PBXGroup;
 			children = (
+				EB3034BE2D413439005A227B /* Line */,
 				EB60BF732D3FC71B003DAC56 /* FilterButtonDeliveries.swift */,
+				EB3034BF2D413453005A227B /* DetailRow.swift */,
+				EB3034C12D41347C005A227B /* DeliveryInfoCard.swift */,
+				EB3034C32D4134CD005A227B /* DeliveryCard.swift */,
 			);
 			path = Deliveries;
 			sourceTree = "<group>";
@@ -286,7 +334,9 @@
 				EBCEDB572D2D1AD6003422ED /* SingleDriverView.swift in Sources */,
 				EBCEDB592D2D1AD6003422ED /* UberUberApp.swift in Sources */,
 				EB310CB42D2ED81500576E86 /* Color.swift in Sources */,
+				EB3034B82D413395005A227B /* AccountInfoCard.swift in Sources */,
 				EBAE60132D3FE52900CB448F /* DriverCartCard.swift in Sources */,
+				EB3034B42D41296B005A227B /* ToggleRow.swift in Sources */,
 				EB310CB62D2EDBD600576E86 /* AnimatedWaves.swift in Sources */,
 				EBCEDB532D2D1AD6003422ED /* CartView.swift in Sources */,
 				EBCEDB4B2D2D1AD6003422ED /* DriverViewModel.swift in Sources */,
@@ -298,19 +348,25 @@
 				EB60BF772D3FE291003DAC56 /* SingleDeliveryView.swift in Sources */,
 				EBAE600F2D3FBA9B00CB448F /* DriverCard.swift in Sources */,
 				EB310CA82D2ECF7E00576E86 /* ContentView.swift in Sources */,
+				EB3034B62D4129B9005A227B /* InfoRow.swift in Sources */,
 				EBCEDB4D2D2D1AD6003422ED /* APIService.swift in Sources */,
 				EBCEDB4F2D2D1AD6003422ED /* Driver.swift in Sources */,
 				EB310CB12D2ED74700576E86 /* ModernTextField.swift in Sources */,
+				EB3034BD2D41340F005A227B /* ErrorView.swift in Sources */,
 				EBCEDB552D2D1AD6003422ED /* DriversView.swift in Sources */,
 				EBCEDB522D2D1AD6003422ED /* AccountView.swift in Sources */,
 				EBCEDB4A2D2D1AD6003422ED /* DeliveryViewModel.swift in Sources */,
 				EB60BF7D2D3FF5FE003DAC56 /* DeliveryLineViewModel.swift in Sources */,
 				EBCEDB4E2D2D1AD6003422ED /* Delivery.swift in Sources */,
+				EB3034C22D41347C005A227B /* DeliveryInfoCard.swift in Sources */,
 				EB22BBE42D314A27003BEFDF /* WelcomeView.swift in Sources */,
 				EBAE600D2D3FBA5200CB448F /* FilterButton.swift in Sources */,
+				EB3034BA2D4133D1005A227B /* DeliveryLineViewModel.State.swift in Sources */,
 				EBCEDB542D2D1AD6003422ED /* DeliveryView.swift in Sources */,
+				EB3034C02D413453005A227B /* DetailRow.swift in Sources */,
 				EB310CA62D2ECDEE00576E86 /* LoginView.swift in Sources */,
 				EB310CAD2D2ED6C200576E86 /* WaveShape.swift in Sources */,
+				EB3034C42D4134CD005A227B /* DeliveryCard.swift in Sources */,
 				EBCEDB502D2D1AD6003422ED /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
