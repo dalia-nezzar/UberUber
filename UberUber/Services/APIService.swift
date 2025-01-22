@@ -105,7 +105,7 @@ struct APIService {
     }
     
     
-    func editUser(id_client: String, firstname: String, lastname: String, email: String, birthdate: Date, image_url: URL, is_alive: Int, allow_criminal_record: Int, wants_extra_napkins: Int) async {
+    func editUser(id_client: String, firstname: String, lastname: String, email: String, password: String, birthdate: Date, image_url: URL, is_alive: Int, allow_criminal_record: Int, wants_extra_napkins: Int) async {
         guard let url = URL(string: "\(baseURL.apiURL)clients/"+id_client) else {
             print("URL invalide")
             return
@@ -121,6 +121,7 @@ struct APIService {
             "firstname": firstname,
             "lastname": lastname,
             "email": email,
+            "password": password,
             "birthdate": birthdateString,
             "image_url": image_url.absoluteString,
             "is_alive": is_alive,

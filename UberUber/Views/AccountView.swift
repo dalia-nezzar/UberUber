@@ -12,6 +12,7 @@ struct AccountView: View {
     @State private var isEditing = false
     @State private var editedFirstName = ""
     @State private var editedLastName = ""
+    @State private var editedPassword = ""
     @State private var editedEmail = ""
     @State private var editedBirthdate = Date()
     @State private var isAlive = true
@@ -60,6 +61,7 @@ struct AccountView: View {
                                     AccountInfoCard(title: "Informations Personnelles") {
                                         InfoRow(title: "Nom", value: "\(user.firstname) \(user.lastname)")
                                         InfoRow(title: "Email", value: user.email)
+                                        InfoRow(title: "Mot de passe", value: "*******")
                                         InfoRow(title: "Date de naissance", value: formatDate(user.birthdate))
                                     }
                                     
@@ -75,6 +77,8 @@ struct AccountView: View {
                                         TextField("Nom", text: $editedLastName)
                                             .textFieldStyle(RoundedBorderTextFieldStyle())
                                         TextField("Email", text: $editedEmail)
+                                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                                        SecureField("Mot de passe", text: $editedPassword)
                                             .textFieldStyle(RoundedBorderTextFieldStyle())
                                         DatePicker("Date de naissance", selection: $editedBirthdate, displayedComponents: .date)
                                         
@@ -167,6 +171,7 @@ struct AccountView: View {
         editedFirstName = user.firstname
         editedLastName = user.lastname
         editedEmail = user.email
+        editedPassword = user.password
         
         // Correction du format de date pour ISO8601
         let isoFormatter = ISO8601DateFormatter()
@@ -198,6 +203,10 @@ struct AccountView: View {
         
         if editedEmail != user.email {
             modifiedFields["email"] = editedEmail
+        }
+        
+        if editedPassword != user.password {
+            modifiedFields["password"] = editedPassword
         }
         
         let isoFormatter = ISO8601DateFormatter()
