@@ -13,11 +13,13 @@ struct AccountView: View {
     @State private var editedFirstName = ""
     @State private var editedLastName = ""
     @State private var editedPassword = ""
+    @State private var editedPasswordConfirmation = ""
     @State private var editedEmail = ""
     @State private var editedBirthdate = Date()
     @State private var isAlive = true
     @State private var allowCriminalRecord = false
     @State private var wantsExtraNapkins = false
+    @State private var errorMessage: String? = nil
     
     private let headerHeight: CGFloat = 180
     
@@ -80,6 +82,21 @@ struct AccountView: View {
                                             .textFieldStyle(RoundedBorderTextFieldStyle())
                                         SecureField("Mot de passe", text: $editedPassword)
                                             .textFieldStyle(RoundedBorderTextFieldStyle())
+                                            .onChange(of: editedPassword) {
+                                                validatePasswords()
+                                            }
+
+                                        SecureField("Confirmation", text: $editedPasswordConfirmation)
+                                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                                            .onChange(of: editedPasswordConfirmation) {
+                                                validatePasswords()
+                                            }
+                                        
+                                        if let errorMessage = errorMessage {
+                                            ErrorBanner(message: errorMessage)
+                                                .transition(.slide)
+                                        }
+
                                         DatePicker("Date de naissance", selection: $editedBirthdate, displayedComponents: .date)
                                         
                                         Toggle("En vie", isOn: $isAlive)
@@ -154,6 +171,15 @@ struct AccountView: View {
         }
     }
     
+    private func validatePasswords() {
+        if editedPassword != editedPasswordConfirmation {
+            errorMessage = "Les mots de passe ne correspondent pas."
+        } else {
+            errorMessage = nil
+        }
+    }
+
+    
     private func formatDate(_ isoDateString: String) -> String {
         let customFormatter = DateFormatter()
         customFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
@@ -172,6 +198,7 @@ struct AccountView: View {
         editedLastName = user.lastname
         editedEmail = user.email
         editedPassword = user.password
+        editedPasswordConfirmation = user.password
         
         // Correction du format de date pour ISO8601
         let isoFormatter = ISO8601DateFormatter()
@@ -241,6 +268,13 @@ struct AccountView: View {
     private func saveChanges() {
         if case let .success(user) = userViewModel.state {
             let modifiedFields = getModifiedFields(user: user)
+            
+            if editedPassword != editedPasswordConfirmation {
+                errorMessage = "Les mots de passe ne correspondent pas."
+                return
+            } else {
+                errorMessage = ""
+            }
             
             if !modifiedFields.isEmpty {
                 Task {

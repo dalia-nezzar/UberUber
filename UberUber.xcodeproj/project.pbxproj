@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EB22BBE42D314A27003BEFDF /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22BBE32D314A27003BEFDF /* WelcomeView.swift */; };
+		EB26AB172D414814000289CA /* ErrorBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB26AB162D414814000289CA /* ErrorBanner.swift */; };
 		EB3034B42D41296B005A227B /* ToggleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3034B32D41296B005A227B /* ToggleRow.swift */; };
 		EB3034B62D4129B9005A227B /* InfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3034B52D4129B9005A227B /* InfoRow.swift */; };
 		EB3034B82D413395005A227B /* AccountInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3034B72D413395005A227B /* AccountInfoCard.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		EB22BBE32D314A27003BEFDF /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		EB26AB162D414814000289CA /* ErrorBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBanner.swift; sourceTree = "<group>"; };
 		EB3034B32D41296B005A227B /* ToggleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRow.swift; sourceTree = "<group>"; };
 		EB3034B52D4129B9005A227B /* InfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRow.swift; sourceTree = "<group>"; };
 		EB3034B72D413395005A227B /* AccountInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoCard.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				EB3034B32D41296B005A227B /* ToggleRow.swift */,
 				EB3034B52D4129B9005A227B /* InfoRow.swift */,
 				EB3034B72D413395005A227B /* AccountInfoCard.swift */,
+				EB26AB162D414814000289CA /* ErrorBanner.swift */,
 			);
 			path = Clients;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				EBCEDB592D2D1AD6003422ED /* UberUberApp.swift in Sources */,
 				EB310CB42D2ED81500576E86 /* Color.swift in Sources */,
 				EB3034B82D413395005A227B /* AccountInfoCard.swift in Sources */,
+				EB26AB172D414814000289CA /* ErrorBanner.swift in Sources */,
 				EBAE60132D3FE52900CB448F /* DriverCartCard.swift in Sources */,
 				EB3034B42D41296B005A227B /* ToggleRow.swift in Sources */,
 				EB310CB62D2EDBD600576E86 /* AnimatedWaves.swift in Sources */,
